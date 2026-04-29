@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import profile from "./assets/zandile.jpg";
+import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
 
 function App() {
   const [active, setActive] = useState("home");
