@@ -8,7 +8,7 @@ function App() {
   const socials ={
     github:"https://github.com/zandilekheswa5-sudo",
     Linkedin:"https://Linkedin.com/in/zandile-kheswa",
-    Instagram:"https://www.instagram.com/theo._kh?igsh=YWxodDRyOWNraDFv",
+    Instagram:"https://www.instagram.com/theo._kh?igsh=YWxodDRyOWNraDFv"
   };
 
   useEffect(() => {
@@ -182,12 +182,23 @@ function App() {
             </div>
 
             <div className="flex gap-4">
-              <a href="#" className="text-purple-400">
-                GitHub
-              </a>
-              <a href="#" className="text-purple-400">
-                Live Demo
-              </a>
+              <a
+                href="https://github.com/zandilekheswa5-sudo"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-purple-400"
+              >
+               GitHub
+             </a>
+
+              <a
+                href="https://your-live-demo-link.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-purple-400"
+              >
+               Live Demo
+             </a>
             </div>
           </div>
 
@@ -234,7 +245,7 @@ function App() {
 
           <p className="text-gray-400">📧 zandile.dev.sa@gmail.com</p>
           <p className="text-gray-400">📞 +27 79 743 8937</p>
-          <p className="text-gray-400">📍 Rustenburg, SA</p>
+          <p className="text-gray-400">📍 Johannesburg, SA</p>
         </div>
 
         <div className="bg-gray-900 p-6 rounded-xl">
