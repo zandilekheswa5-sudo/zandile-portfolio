@@ -35,7 +35,7 @@ function App() {
   }, []);
 
   return (
-    <div className="bg-black text-white font-sans">
+    <div className="bg-gradient-to-br from-purple-900 via-black to-purple-800 text-white font-sans">
 
       {/* NAVBAR */}
       <nav className="fixed top-6 left-1/2 -translate-x-1/2 z-50">
@@ -129,7 +129,7 @@ function App() {
 </div>
 
           <p className="text-sm text-gray-500">
-            📍 Johannesburg, SA • Available Now
+            📍 Rustenburg, SA • Available Now
           </p>
         </div>
 
@@ -150,7 +150,7 @@ function App() {
 
         <p className="text-gray-400 max-w-2xl">
           I’m Zandile — a frontend developer focused on building clean,
-          responsive, and user-friendly interfaces. Based in Johannesburg,
+          responsive, and user-friendly interfaces. Based in Rustenburg,
           I’m continuously improving my skills in full-stack development,
           UI/UX design, and modern web technologies.
         </p>
@@ -245,7 +245,7 @@ function App() {
 
           <p className="text-gray-400">📧 zandile.dev.sa@gmail.com</p>
           <p className="text-gray-400">📞 +27 79 743 8937</p>
-          <p className="text-gray-400">📍 Johannesburg, SA</p>
+          <p className="text-gray-400">📍 Rustenburg, SA</p>
         </div>
 
         <div className="bg-gray-900 p-6 rounded-xl">
