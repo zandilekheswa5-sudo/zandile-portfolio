@@ -110,7 +110,7 @@ function Home() {
           width: 500,
           height: 500,
           borderRadius: "50%",
-          background: "radial-gradient(circle, rgba(147,51,234,0.18) 0%, transparent 65%)",
+          background: "radial-gradient(circle, rgba(147,51,234,0.35) 0%, transparent 60%)",
           pointerEvents: "none",
         }}
       />
@@ -1064,7 +1064,7 @@ export default function App() {
   return (
     <div
       style={{
-        background: "linear-gradient(135deg, #0a0a0f 0%, #0f0a1a 50%, #0a0a0f 100%)",
+        background: "linear-gradient(135deg, #0a0514 0%, #130a2e 40%, #0d0520 70%, #0a0514 100%)",
         minHeight: "100vh",
         color: "#fff",
         fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, sans-serif",
