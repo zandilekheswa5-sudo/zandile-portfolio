@@ -673,7 +673,7 @@ function Projects() {
                   GitHub →
                 </a>
                 <a
-                  href="#"
+                  href="https://github.com/zandilekheswa5-sudo"
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{ color: "rgba(255,255,255,0.6)", fontSize: 14, textDecoration: "none", fontWeight: 500, transition: "color 0.2s" }}
