@@ -1083,7 +1083,7 @@ export default function App() {
         ::placeholder { color: rgba(255,255,255,0.25); }
         ::-webkit-scrollbar { width: 6px; }
         ::-webkit-scrollbar-track { background: #060608; }
-        ::-webkit-scrollbar-thumb {
+        @media (max-width: 768px) { #home { flex-direction: column !important; padding-top: 120px !important; } #home > div:last-child { margin-left: 0 !important; width: 100% !important; display: flex; justify-content: center; } #home > div:last-child > div { width: 280px !important; height: 340px !important; } } ::-webkit-scrollbar-thumb {
           background: rgba(147,51,234,0.3);
           border-radius: 3px;
         }
