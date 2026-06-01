@@ -126,7 +126,7 @@ function Home() {
         fontWeight: 800, lineHeight: 1.1, color: "#ffffff",
         marginBottom: 12, letterSpacing: "-0.02em",
       }}>
-        Hi, I'm Zandile 👋
+        Hi, I'm Zandile
       </h1>
 
       {/* Title */}
@@ -155,7 +155,7 @@ function Home() {
         gap: 12, marginBottom: 32, flexWrap: "wrap",
       }}>
         <span style={{ fontSize: 14, color: "rgba(255,255,255,0.5)" }}>
-          📍 Rustenburg, SA
+          • Rustenburg, SA
         </span>
         <span style={{
           fontSize: 13, color: "#22c55e", padding: "2px 10px",
@@ -416,7 +416,7 @@ function Projects() {
             display: "flex", flexDirection: "column",
             alignItems: "center", justifyContent: "center", gap: 12,
           }}>
-            <span style={{ fontSize: 32 }}>✨</span>
+            <span style={{ fontSize: 32 }}>*</span>
             <p style={{ color: "rgba(255,255,255,0.3)", fontSize: 15, fontWeight: 500 }}>
               More projects coming...
             </p>
@@ -517,7 +517,7 @@ function Contact() {
         {[
           { icon: "✉️", label: "Email", value: "zandile.dev.sa@gmail.com", href: "mailto:zandile.dev.sa@gmail.com" },
           { icon: "📞", label: "Phone", value: "+27 79 743 8937", href: "tel:+27797438937" },
-          { icon: "📍", label: "Location", value: "Rustenburg, SA", href: null },
+          { icon: "•", label: "Location", value: "Rustenburg, SA", href: null },
         ].map(({ icon, label, value, href }) => (
           <div key={label} style={{ display: "flex", alignItems: "center", gap: 16, marginBottom: 20 }}>
             <div style={{
@@ -608,7 +608,7 @@ function Contact() {
             borderRadius: 12, cursor: "pointer", fontWeight: 600, fontSize: 15,
             boxShadow: "0 4px 20px rgba(147,51,234,0.35)",
           }}>
-            Send Message ✉️
+            Send Message
           </button>
         </div>
       </div>
@@ -626,7 +626,7 @@ function Footer() {
         © 2025 Zandile.dev — Built with React & Tailwind
       </p>
       <p style={{ fontSize: 13, color: "rgba(255,255,255,0.3)", marginTop: 4 }}>
-        Rustenburg, SA 📍
+        Rustenburg, SA •
       </p>
     </footer>
   );
@@ -643,7 +643,7 @@ export default function App() {
     }}>
       <style>{`
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        html, body { overflow-x: hidden; width: 100%; }
+        html, body { overflow-x: hidden; width: 100%; } @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
         ::placeholder { color: rgba(255,255,255,0.25); }
         ::-webkit-scrollbar { width: 6px; }
         ::-webkit-scrollbar-track { background: #0a0514; }
