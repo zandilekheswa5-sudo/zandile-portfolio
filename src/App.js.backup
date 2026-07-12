@@ -1,7 +1,4 @@
 import zandilePhoto from './assets/zandilePhoto.jpg';
-import focusflowImg from './assets/focusflow.png';
-import glowhausImg from './assets/glowhaus.png';
-import mamabearImg from './assets/mamabear.png';
 import { useState, useEffect, useRef } from "react";
 
 function useReveal() {
@@ -100,6 +97,7 @@ function Home() {
       position: "relative", overflow: "hidden",
       gap: isMobile ? 0 : 60,
     }}>
+      {/* Background glow */}
       <div style={{
         position: "absolute", top: "20%", left: "10%",
         width: 500, height: 500, borderRadius: "50%",
@@ -112,6 +110,7 @@ function Home() {
         flex: 1, maxWidth: isMobile ? "100%" : 600,
         order: isMobile ? 2 : 1, zIndex: 1,
       }}>
+        {/* Available badge */}
         <div style={{
           display: "inline-flex", alignItems: "center", gap: 8,
           marginBottom: 24, padding: "6px 14px", borderRadius: 999,
@@ -131,7 +130,7 @@ function Home() {
           fontWeight: 800, lineHeight: 1.1, color: "#ffffff",
           marginBottom: 12, letterSpacing: "-0.02em",
         }}>
-          Hi, I'm Zandile 👋
+          Hi, I'm Zandile
         </h1>
 
         <h2 style={{
@@ -141,30 +140,36 @@ function Home() {
           WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
           marginBottom: 20,
         }}>
-          Frontend Developer | AI Engineer
+          Frontend Developer & AI Enthusiast
         </h2>
 
         <p style={{
           fontSize: 16, lineHeight: 1.8, color: "rgba(255,255,255,0.7)",
           marginBottom: 32, maxWidth: isMobile ? "100%" : 500,
         }}>
-          Building modern, responsive web applications with React, Next.js, and AI-powered
-          solutions. I create fast, user-friendly digital experiences that combine clean code,
+          Building modern web experiences with React, JavaScript, and AI-powered solutions.
+          I create responsive, user-friendly digital products that combine clean code,
           performance, and thoughtful design.
         </p>
 
+        {/* Location */}
         <div style={{
           display: "flex", alignItems: "center", gap: 12, marginBottom: 32,
           justifyContent: isMobile ? "center" : "flex-start", flexWrap: "wrap",
         }}>
-          <span style={{ fontSize: 14, color: "rgba(255,255,255,0.5)" }}>📍 South Africa</span>
+          <span style={{ fontSize: 14, color: "rgba(255,255,255,0.5)" }}>
+            📍 Rustenburg, SA
+          </span>
           <span style={{
             fontSize: 13, color: "#22c55e", padding: "2px 10px",
             borderRadius: 999, background: "rgba(34,197,94,0.1)",
             border: "1px solid rgba(34,197,94,0.2)",
-          }}>Available Now</span>
+          }}>
+            Available Now
+          </span>
         </div>
 
+        {/* Buttons */}
         <div style={{
           display: "flex", gap: 12, flexWrap: "wrap", marginBottom: 40,
           justifyContent: isMobile ? "center" : "flex-start",
@@ -173,36 +178,35 @@ function Home() {
             background: "linear-gradient(135deg, #7c3aed, #9333ea)",
             border: "none", color: "#fff", padding: "13px 28px",
             borderRadius: 999, cursor: "pointer", fontWeight: 600, fontSize: 15,
-            boxShadow: "0 4px 20px rgba(147,51,234,0.35)", transition: "all 0.2s",
+            boxShadow: "0 4px 20px rgba(147,51,234,0.35)",
+            transition: "all 0.2s",
           }}
             onMouseEnter={e => e.target.style.transform = "translateY(-2px)"}
             onMouseLeave={e => e.target.style.transform = "translateY(0)"}
           >
             View Projects
           </button>
-          <a
-            href="/Zandile-Kheswa_CV.pdf"
-            download="Zandile_Kheswa_CV.pdf"
-            style={{
-              background: "transparent",
-              border: "1.5px solid rgba(255,255,255,0.25)",
-              color: "#fff", padding: "13px 28px", borderRadius: 999,
-              cursor: "pointer", fontWeight: 600, fontSize: 15,
-              transition: "all 0.2s", textDecoration: "none", display: "inline-block",
-            }}
+          <button onClick={() => scrollTo("contact")} style={{
+            background: "transparent",
+            border: "1.5px solid rgba(255,255,255,0.25)",
+            color: "#fff", padding: "13px 28px", borderRadius: 999,
+            cursor: "pointer", fontWeight: 600, fontSize: 15,
+            transition: "all 0.2s",
+          }}
             onMouseEnter={e => {
-              e.currentTarget.style.borderColor = "rgba(147,51,234,0.6)";
-              e.currentTarget.style.background = "rgba(147,51,234,0.1)";
+              e.target.style.borderColor = "rgba(147,51,234,0.6)";
+              e.target.style.background = "rgba(147,51,234,0.1)";
             }}
             onMouseLeave={e => {
-              e.currentTarget.style.borderColor = "rgba(255,255,255,0.25)";
-              e.currentTarget.style.background = "transparent";
+              e.target.style.borderColor = "rgba(255,255,255,0.25)";
+              e.target.style.background = "transparent";
             }}
           >
-            Download CV
-          </a>
+            Hire Me
+          </button>
         </div>
 
+        {/* Social links */}
         <div style={{
           display: "flex", alignItems: "center", gap: 16,
           justifyContent: isMobile ? "center" : "flex-start",
@@ -227,7 +231,8 @@ function Home() {
 
       {/* RIGHT photo */}
       <div style={{
-        order: isMobile ? 1 : 2, flexShrink: 0,
+        order: isMobile ? 1 : 2,
+        flexShrink: 0,
         display: "flex", justifyContent: "center",
         marginBottom: isMobile ? 32 : 0, zIndex: 1,
       }}>
@@ -252,71 +257,6 @@ function About() {
   const [ref, visible] = useReveal();
   const isMobile = useIsMobile();
 
-  const focusAreas = [
-    { icon: "⚛️", text: "Frontend Development with React" },
-    { icon: "🔧", text: "Full Stack Development" },
-    { icon: "🤖", text: "AI Engineering" },
-    { icon: "🚀", text: "Building Real-World Projects" },
-    { icon: "📱", text: "Responsive Web Design" },
-  ];
-
-  const PolaroidPhoto = ({ size }) => (
-    <div style={{
-      width: size, background: "#1a1a1a",
-      border: "1px solid rgba(255,255,255,0.08)",
-      borderRadius: 12, padding: "10px 10px 30px",
-      boxShadow: "0 20px 60px rgba(0,0,0,0.5), -4px 4px 20px rgba(147,51,234,0.08)",
-      transform: "rotate(2.5deg)", transition: "transform 0.3s ease", cursor: "pointer",
-    }}
-      onMouseEnter={e => e.currentTarget.style.transform = "rotate(0deg) scale(1.03)"}
-      onMouseLeave={e => e.currentTarget.style.transform = "rotate(2.5deg)"}
-    >
-      <div style={{ width: "100%", aspectRatio: "1", borderRadius: 6, overflow: "hidden", marginBottom: 10 }}>
-        <img src={zandilePhoto} alt="Zandile" style={{
-          width: "100%", height: "100%", objectFit: "cover", objectPosition: "top"
-        }} />
-      </div>
-      <p style={{ textAlign: "center", fontSize: 12, color: "rgba(255,255,255,0.6)", fontFamily: "cursive" }}>@Zandile.dev</p>
-      <p style={{ textAlign: "center", fontSize: 10, color: "rgba(255,255,255,0.35)" }}>Frontend Developer</p>
-    </div>
-  );
-
-  const AboutText = () => (
-    <>
-      <p style={{ fontSize: 16, lineHeight: 1.85, color: "rgba(255,255,255,0.7)", marginBottom: 20 }}>
-        I am a Frontend Developer from South Africa, passionate about building clean,
-        responsive, and user-friendly web applications. I enjoy transforming ideas into
-        modern digital experiences that combine beautiful design with excellent performance.
-      </p>
-      <p style={{ fontSize: 16, lineHeight: 1.85, color: "rgba(255,255,255,0.7)", marginBottom: 36 }}>
-        I am continuously expanding my knowledge in Full Stack Development and AI
-        technologies by building real-world projects. I focus on writing clean code,
-        improving user experiences, and creating practical software solutions that
-        solve real problems.
-      </p>
-      <div>
-        <p style={{
-          fontSize: 13, color: "rgba(255,255,255,0.4)", marginBottom: 16,
-          fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.1em",
-        }}>Current Focus Areas</p>
-        <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-          {focusAreas.map(({ icon, text }) => (
-            <div key={text} style={{ display: "flex", alignItems: "center", gap: 12 }}>
-              <span style={{
-                width: 34, height: 34, borderRadius: 8, flexShrink: 0,
-                background: "rgba(147,51,234,0.12)",
-                border: "1px solid rgba(147,51,234,0.2)",
-                display: "flex", alignItems: "center", justifyContent: "center",
-                fontSize: 15,
-              }}>{icon}</span>
-              <p style={{ fontSize: 14, color: "rgba(255,255,255,0.65)", lineHeight: 1.6 }}>{text}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </>
-  );
-
   return (
     <section id="about" style={{ padding: isMobile ? "80px 24px" : "100px 8%" }}>
       <div ref={ref} style={{
@@ -332,29 +272,86 @@ function About() {
         }}>Who I Am</p>
         <h2 style={{
           fontSize: "clamp(2rem, 5vw, 3rem)", fontWeight: 800,
-          color: "#fff", marginBottom: 32, lineHeight: 1.1,
+          color: "#fff", marginBottom: 40, lineHeight: 1.1,
           textAlign: isMobile ? "center" : "left",
         }}>About Me</h2>
 
-        {isMobile ? (
-          <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+        <div style={{
+          display: "flex",
+          flexDirection: isMobile ? "column" : "row",
+          gap: isMobile ? 32 : 60,
+          alignItems: isMobile ? "center" : "flex-start",
+        }}>
+          {/* Text — LEFT on desktop */}
+          <div style={{ flex: 1, width: "100%" }}>
+            <p style={{ fontSize: 16, lineHeight: 1.85, color: "rgba(255,255,255,0.7)", marginBottom: 20 }}>
+              I am a Frontend Developer based in Rustenburg, South Africa,
+              specialising in building clean, responsive, and user-centric web
+              interfaces. My work focuses on transforming ideas into intuitive
+              digital experiences that are both visually engaging and functionally
+              robust.
+            </p>
+            <p style={{ fontSize: 16, lineHeight: 1.85, color: "rgba(255,255,255,0.7)", marginBottom: 36 }}>
+              I am currently expanding my expertise into Full Stack Software
+              Development and AI technologies through hands-on projects,
+              continuously strengthening both my technical and problem-solving
+              capabilities. I have a strong interest in modern web design,
+              particularly in crafting responsive layouts and interactive user
+              experiences that balance aesthetics with performance.
+            </p>
+
+            {/* Focus Areas */}
             <div style={{ marginBottom: 24 }}>
-              <PolaroidPhoto size={160} />
-            </div>
-            <div style={{ width: "100%", textAlign: "left" }}>
-              <AboutText />
+              <p style={{
+                fontSize: 13, color: "rgba(255,255,255,0.4)", marginBottom: 16,
+                fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.1em",
+              }}>Current Focus Areas</p>
+              <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+                {[
+                  { icon: "⚛️", text: "Frontend Development with React" },
+                  { icon: "🔧", text: "Full Stack Development" },
+                  { icon: "🤖", text: "Prompt Engineering & AI Applications" },
+                  { icon: "🚀", text: "Building Real-World Projects" },
+                  { icon: "📱", text: "Responsive Web Design" },
+                ].map(({ icon, text }) => (
+                  <div key={text} style={{ display: "flex", alignItems: "center", gap: 12 }}>
+                    <span style={{
+                      width: 34, height: 34, borderRadius: 8, flexShrink: 0,
+                      background: "rgba(147,51,234,0.12)",
+                      border: "1px solid rgba(147,51,234,0.2)",
+                      display: "flex", alignItems: "center", justifyContent: "center",
+                      fontSize: 15,
+                    }}>{icon}</span>
+                    <p style={{ fontSize: 14, color: "rgba(255,255,255,0.65)", lineHeight: 1.6 }}>{text}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
-        ) : (
-          <div style={{ display: "flex", flexDirection: "row", gap: 60, alignItems: "flex-start" }}>
-            <div style={{ flex: 1 }}>
-              <AboutText />
-            </div>
-            <div style={{ flexShrink: 0 }}>
-              <PolaroidPhoto size={200} />
+
+          {/* Polaroid photo — RIGHT on desktop */}
+          <div style={{ flexShrink: 0 }}>
+            <div style={{
+              width: isMobile ? 160 : 200,
+              background: "#1a1a1a",
+              border: "1px solid rgba(255,255,255,0.08)",
+              borderRadius: 12, padding: "10px 10px 30px",
+              boxShadow: "0 20px 60px rgba(0,0,0,0.5), -4px 4px 20px rgba(147,51,234,0.08)",
+              transform: "rotate(2.5deg)", transition: "transform 0.3s ease", cursor: "pointer",
+            }}
+              onMouseEnter={e => e.currentTarget.style.transform = "rotate(0deg) scale(1.03)"}
+              onMouseLeave={e => e.currentTarget.style.transform = "rotate(2.5deg)"}
+            >
+              <div style={{ width: "100%", aspectRatio: "1", borderRadius: 6, overflow: "hidden", marginBottom: 10 }}>
+                <img src={zandilePhoto} alt="Zandile" style={{
+                  width: "100%", height: "100%", objectFit: "cover", objectPosition: "top"
+                }} />
+              </div>
+              <p style={{ textAlign: "center", fontSize: 12, color: "rgba(255,255,255,0.6)", fontFamily: "cursive" }}>@Zandile.dev</p>
+              <p style={{ textAlign: "center", fontSize: 10, color: "rgba(255,255,255,0.35)" }}>Frontend Developer</p>
             </div>
           </div>
-        )}
+        </div>
       </div>
     </section>
   );
@@ -363,6 +360,7 @@ function About() {
 // ── SKILLS ─────────────────────────────────────────────────────────────────
 function Skills() {
   const [ref, visible] = useReveal();
+  const isMobile = useIsMobile();
 
   const skillGroups = [
     {
@@ -377,19 +375,19 @@ function Skills() {
       color: "#818cf8",
       bg: "rgba(99,102,241,0.12)",
       border: "rgba(99,102,241,0.25)",
-      skills: ["Git", "GitHub", "VS Code", "Vercel", "Figma", "UI/UX Design"],
+      skills: ["Git", "GitHub", "VS Code", "Vercel", "Figma"],
     },
     {
       title: "Learning & Expanding",
       color: "#34d399",
       bg: "rgba(52,211,153,0.1)",
       border: "rgba(52,211,153,0.2)",
-      skills: ["Next.js", "TypeScript", "Node.js", "Express.js", "SQL", "Supabase", "AI Engineering"],
+      skills: ["Next.js", "TypeScript", "Node.js", "Express.js", "SQL", "Supabase", "Prompt Engineering", "AI Engineering"],
     },
   ];
 
   return (
-    <section id="skills" style={{ padding: "100px 8%" }}>
+    <section id="skills" style={{ padding: isMobile ? "80px 24px" : "100px 8%" }}>
       <div ref={ref} style={{
         maxWidth: 1000, margin: "0 auto",
         opacity: visible ? 1 : 0,
@@ -406,7 +404,11 @@ function Skills() {
           </h2>
         </div>
 
-        <div style={{ display: "grid", gridTemplateColumns: "1fr", gap: 20 }}>
+        <div style={{
+          display: "grid",
+          gridTemplateColumns: isMobile ? "1fr" : "repeat(3, 1fr)",
+          gap: 24,
+        }}>
           {skillGroups.map(({ title, color, bg, border, skills }) => (
             <div key={title} style={{
               background: "rgba(20,15,35,0.8)",
@@ -429,7 +431,7 @@ function Skills() {
               <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
                 {skills.map(skill => (
                   <span key={skill} style={{
-                    padding: "6px 14px", borderRadius: 999,
+                    padding: "5px 12px", borderRadius: 999,
                     background: bg, border: `1px solid ${border}`,
                     color, fontSize: 13, fontWeight: 500,
                   }}>{skill}</span>
@@ -451,30 +453,33 @@ function Projects() {
   const projects = [
     {
       title: "FocusFlow Dashboard",
-      image: focusflowImg,
-      desc: "A modern productivity and task management dashboard designed to help freelancers and professionals organize tasks, manage priorities, track deadlines, and improve daily productivity through a clean, responsive interface.",
-      features: ["Task Management", "Priority Levels", "Dashboard Analytics", "User Authentication", "Supabase Database"],
+      desc: "A full-stack productivity and task management application built for freelancers and professionals. Helps users manage tasks, track progress, monitor deadlines, and stay productive.",
+      features: ["User Authentication", "Task Management", "Priority Levels", "Dashboard Analytics", "Cloud Database"],
       tags: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase"],
-      github: "https://github.com/zandilekheswa5-sudo/focusflow",
-      demo: "https://focusflow-nine-gules.vercel.app",
+      github: "https://github.com/zandilekheswa5-sudo",
+      demo: "https://github.com/zandilekheswa5-sudo",
+      icon: "⚡",
+      color: "#c084fc",
     },
     {
       title: "GlowHaus Beauty Store",
-      image: glowhausImg,
-      desc: "A modern beauty e-commerce website offering a clean shopping experience for skincare, haircare, makeup, and self-care products. Designed with a responsive interface and elegant user experience.",
+      desc: "A modern beauty e-commerce website designed for beauty and self-care brands. Provides a clean shopping experience for skincare, haircare, makeup and beauty essentials.",
       features: ["Product Catalog", "Category Browsing", "Featured Products", "Responsive Design"],
-      tags: ["React", "JavaScript", "Vite", "Tailwind CSS"],
-      github: "https://github.com/zandilekheswa5-sudo/glowhaus",
-      demo: "https://glowhaus-ten.vercel.app/#",
+      tags: ["React", "JavaScript", "Tailwind CSS"],
+      github: "https://github.com/zandilekheswa5-sudo",
+      demo: "https://github.com/zandilekheswa5-sudo",
+      icon: "✨",
+      color: "#f472b6",
     },
     {
       title: "Styled By Mama Bear",
-      image: mamabearImg,
-      desc: "A professional hairstylist booking website created for a local beauty business. Allows clients to explore services, learn about the business, and make appointment enquiries through a clean and responsive interface.",
-      features: ["Service Showcase", "Appointment Booking", "Contact Information", "Responsive Design"],
+      desc: "A professional hairstylist booking website for a local beauty business. Showcases services, provides business information, and allows client inquiries.",
+      features: ["Service Showcase", "Contact Information", "Appointment Booking", "Responsive Design"],
       tags: ["React", "JavaScript", "Tailwind CSS"],
-      github: "https://github.com/zandilekheswa5-sudo/styled-by-mama-bear",
-      demo: "https://mama-bear-styles.lovable.app",
+      github: "https://github.com/zandilekheswa5-sudo",
+      demo: "https://github.com/zandilekheswa5-sudo",
+      icon: "💇",
+      color: "#34d399",
     },
   ];
 
@@ -498,22 +503,21 @@ function Projects() {
 
         <div style={{
           display: "grid",
-          gridTemplateColumns: isMobile ? "1fr" : "repeat(3, 1fr)",
-          gap: 24, alignItems: "stretch",
+          gridTemplateColumns: isMobile ? "1fr" : "repeat(auto-fit, minmax(300px, 1fr))",
+          gap: 24,
         }}>
-          {projects.map(({ title, image, desc, features, tags, github, demo }) => (
+          {projects.map(({ title, desc, features, tags, github, demo, icon, color }) => (
             <div key={title} style={{
               background: "rgba(20,15,35,0.8)",
               border: "1px solid rgba(147,51,234,0.2)",
               borderRadius: 20, overflow: "hidden",
               transition: "all 0.3s ease",
               boxShadow: "0 8px 32px rgba(0,0,0,0.3)",
-              display: "flex", flexDirection: "column",
             }}
               onMouseEnter={e => {
-                e.currentTarget.style.transform = "translateY(-8px)";
-                e.currentTarget.style.borderColor = "rgba(147,51,234,0.55)";
-                e.currentTarget.style.boxShadow = "0 24px 60px rgba(147,51,234,0.25)";
+                e.currentTarget.style.transform = "translateY(-6px)";
+                e.currentTarget.style.borderColor = "rgba(147,51,234,0.5)";
+                e.currentTarget.style.boxShadow = "0 20px 50px rgba(147,51,234,0.2)";
               }}
               onMouseLeave={e => {
                 e.currentTarget.style.transform = "translateY(0)";
@@ -521,76 +525,55 @@ function Projects() {
                 e.currentTarget.style.boxShadow = "0 8px 32px rgba(0,0,0,0.3)";
               }}
             >
-              {/* Clickable screenshot */}
-              <a href={demo} target="_blank" rel="noopener noreferrer" style={{
-                display: "block", height: 200, overflow: "hidden",
-                position: "relative", flexShrink: 0, cursor: "pointer",
+              {/* Project image placeholder */}
+              <div style={{
+                height: 180,
+                background: `linear-gradient(135deg, #1e0b3d, #0f0520)`,
+                display: "flex", flexDirection: "column",
+                alignItems: "center", justifyContent: "center",
+                position: "relative",
               }}>
-                <img
-                  src={image}
-                  alt={title}
-                  style={{
-                    width: "100%", height: "100%",
-                    objectFit: "cover", objectPosition: "top",
-                    transition: "transform 0.4s ease",
-                  }}
-                  onMouseEnter={e => e.target.style.transform = "scale(1.08)"}
-                  onMouseLeave={e => e.target.style.transform = "scale(1)"}
-                />
-                {/* Hover overlay */}
-                <div style={{
-                  position: "absolute", inset: 0,
-                  background: "rgba(147,51,234,0.15)",
-                  display: "flex", alignItems: "center", justifyContent: "center",
-                  opacity: 0, transition: "opacity 0.3s ease",
-                }}
-                  onMouseEnter={e => e.currentTarget.style.opacity = "1"}
-                  onMouseLeave={e => e.currentTarget.style.opacity = "0"}
-                >
-                  <span style={{
-                    background: "rgba(147,51,234,0.9)",
-                    color: "#fff", padding: "8px 18px", borderRadius: 999,
-                    fontSize: 13, fontWeight: 600,
-                  }}>View Live Demo</span>
-                </div>
-                {/* Live badge */}
+                <span style={{ fontSize: 52 }}>{icon}</span>
+                <span style={{ fontSize: 13, marginTop: 8, color: "rgba(255,255,255,0.35)", fontWeight: 500 }}>{title}</span>
                 <div style={{
                   position: "absolute", top: 12, right: 12,
                   padding: "4px 10px", borderRadius: 999,
                   background: "rgba(34,197,94,0.15)",
                   border: "1px solid rgba(34,197,94,0.3)",
                   color: "#86efac", fontSize: 11, fontWeight: 500,
-                  backdropFilter: "blur(8px)",
                 }}>Live</div>
-              </a>
+              </div>
 
-              <div style={{ padding: 22, display: "flex", flexDirection: "column", flex: 1 }}>
-                <h3 style={{ fontSize: 17, fontWeight: 700, color: "#fff", marginBottom: 8 }}>{title}</h3>
-                <p style={{ fontSize: 13, color: "rgba(255,255,255,0.55)", marginBottom: 14, lineHeight: 1.65, flex: 1 }}>{desc}</p>
+              <div style={{ padding: 24 }}>
+                <h3 style={{ fontSize: 19, fontWeight: 700, color: "#fff", marginBottom: 10 }}>{title}</h3>
+                <p style={{ fontSize: 14, color: "rgba(255,255,255,0.55)", marginBottom: 16, lineHeight: 1.65 }}>{desc}</p>
 
-                <div style={{ marginBottom: 14 }}>
+                {/* Features */}
+                <div style={{ marginBottom: 16 }}>
                   {features.map(f => (
                     <span key={f} style={{
-                      display: "inline-block", fontSize: 11,
-                      color: "rgba(255,255,255,0.38)", marginRight: 8, marginBottom: 4,
+                      display: "inline-block", fontSize: 12,
+                      color: "rgba(255,255,255,0.4)", marginRight: 8, marginBottom: 4,
                     }}>• {f}</span>
                   ))}
                 </div>
 
-                <div style={{ display: "flex", gap: 6, flexWrap: "wrap", marginBottom: 18 }}>
+                {/* Tags */}
+                <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginBottom: 20 }}>
                   {tags.map(tag => (
                     <span key={tag} style={{
-                      padding: "4px 10px", borderRadius: 999,
+                      padding: "4px 12px", borderRadius: 999,
                       background: "rgba(147,51,234,0.15)",
                       border: "1px solid rgba(147,51,234,0.3)",
-                      color: "#c084fc", fontSize: 11, fontWeight: 500,
+                      color: "#c084fc", fontSize: 12, fontWeight: 500,
                     }}>{tag}</span>
                   ))}
                 </div>
 
-                <div style={{ display: "flex", gap: 10 }}>
+                {/* Links */}
+                <div style={{ display: "flex", gap: 12 }}>
                   <a href={github} target="_blank" rel="noopener noreferrer" style={{
-                    flex: 1, padding: "8px 0", borderRadius: 999, textAlign: "center",
+                    padding: "8px 18px", borderRadius: 999,
                     background: "rgba(255,255,255,0.06)",
                     border: "1px solid rgba(255,255,255,0.12)",
                     color: "rgba(255,255,255,0.7)", fontSize: 13,
@@ -600,7 +583,7 @@ function Projects() {
                     onMouseLeave={e => { e.target.style.background = "rgba(255,255,255,0.06)"; e.target.style.color = "rgba(255,255,255,0.7)"; }}
                   >GitHub</a>
                   <a href={demo} target="_blank" rel="noopener noreferrer" style={{
-                    flex: 1, padding: "8px 0", borderRadius: 999, textAlign: "center",
+                    padding: "8px 18px", borderRadius: 999,
                     background: "linear-gradient(135deg, #7c3aed, #9333ea)",
                     color: "#fff", fontSize: 13,
                     textDecoration: "none", fontWeight: 500, transition: "all 0.2s",
@@ -624,11 +607,11 @@ function Services() {
   const isMobile = useIsMobile();
 
   const services = [
-    { icon: "⚛️", title: "React Frontend Development", desc: "Build responsive, modern, and user-friendly websites and web applications using React, JavaScript, and Tailwind CSS." },
-    { icon: "🌐", title: "Responsive Website Development", desc: "Develop fast, accessible, and responsive websites that provide excellent user experiences across all devices." },
-    { icon: "🖥️", title: "Landing Pages", desc: "Create modern landing pages designed to convert visitors into customers through clean layouts and engaging interfaces." },
-    { icon: "🔧", title: "Website Maintenance", desc: "Maintain existing websites by fixing bugs, improving performance, updating content, and ensuring long-term reliability." },
-    { icon: "🤖", title: "AI Solutions", desc: "Build AI-powered solutions by integrating modern AI tools, automating workflows, and developing intelligent applications that improve productivity." },
+    { icon: "🌐", title: "Web Development", desc: "Building responsive websites and web applications using modern frontend technologies including React and Tailwind CSS." },
+    { icon: "💻", title: "Frontend Development", desc: "Creating interactive, user-friendly interfaces with clean and maintainable code that performs beautifully across all devices." },
+    { icon: "🖥️", title: "Landing Pages", desc: "Designing and developing business websites, personal portfolios, and product landing pages that convert visitors." },
+    { icon: "🔧", title: "Website Maintenance", desc: "Fixing bugs, updating content, improving performance, and maintaining existing websites to keep them running smoothly." },
+    { icon: "🤖", title: "AI & Prompt Engineering", desc: "Creating AI-powered workflows, prompts, and productivity solutions to help businesses leverage modern AI tools." },
   ];
 
   return (
@@ -710,6 +693,7 @@ function Contact() {
         transform: visible ? "translateY(0)" : "translateY(40px)",
         transition: "all 0.7s ease",
       }}>
+        {/* Badges */}
         <div style={{
           display: "flex", gap: 12, flexWrap: "wrap",
           justifyContent: isMobile ? "center" : "flex-start",
@@ -730,6 +714,7 @@ function Contact() {
           gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr",
           gap: isMobile ? 40 : 60,
         }}>
+          {/* Left */}
           <div>
             <p style={{
               color: "#a855f7", fontSize: 13, fontWeight: 600,
@@ -746,7 +731,7 @@ function Contact() {
             {[
               { icon: "✉️", label: "Email", value: "zandile.dev.sa@gmail.com", href: "mailto:zandile.dev.sa@gmail.com" },
               { icon: "📞", label: "Phone", value: "+27 79 743 8937", href: "tel:+27797438937" },
-              { icon: "📍", label: "Location", value: "South Africa", href: null },
+              { icon: "📍", label: "Location", value: "Rustenburg, SA", href: null },
             ].map(({ icon, label, value, href }) => (
               <div key={label} style={{ display: "flex", alignItems: "center", gap: 16, marginBottom: 20 }}>
                 <div style={{
@@ -799,6 +784,7 @@ function Contact() {
             </div>
           </div>
 
+          {/* Right — Form */}
           <div style={{
             background: "rgba(20,15,35,0.8)",
             border: "1px solid rgba(147,51,234,0.15)",
@@ -876,7 +862,7 @@ function Footer() {
           Zandile Kheswa
         </p>
         <p style={{ fontSize: 13, color: "rgba(255,255,255,0.3)" }}>
-          Frontend Developer & AI Engineer
+          Frontend Developer & AI Enthusiast
         </p>
         <p style={{ fontSize: 12, color: "rgba(255,255,255,0.2)", marginTop: 4 }}>
           © 2026 Zandile Kheswa. All Rights Reserved.
