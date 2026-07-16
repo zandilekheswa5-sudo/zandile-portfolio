@@ -8,8 +8,6 @@
 
 ## 📸 Preview
 
-> Add a screenshot of your portfolio homepage here.
-
 ![Portfolio Preview](./preview.png)
 
 ---
