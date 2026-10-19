@@ -176,25 +176,25 @@ function InnerPill({ t, children, small }) {
 
 // ── NAVBAR ─────────────────────────────────────────────────────────────────
 // ─── NAVBAR ───
+const NAV_LINKS = [
+  "home",
+  "about",
+  "skills",
+  "projects",
+  "qualifications",
+  "contact",
+];
+
 function Navbar({ theme, t, toggleTheme }) {
   const [active, setActive] = useState("home");
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const isMobile = useIsMobile();
 
-  const links = [
-    "home",
-    "about",
-    "skills",
-    "projects",
-    "qualifications",
-    "contact",
-  ];
-
   useEffect(() => {
     const onScroll = () => {
       setScrolled(window.scrollY > 20);
-      for (const id of [...links].reverse()) {
+      for (const id of [...NAV_LINKS].reverse()) {
         const el = document.getElementById(id);
         if (el && window.scrollY >= el.offsetTop - 140) { setActive(id); break; }
       }
@@ -229,7 +229,7 @@ function Navbar({ theme, t, toggleTheme }) {
 
           {!isMobile && (
             <div style={{ display: "flex", alignItems: "center", gap: 4 }}>
-              {links.map((id) => (
+              {NAV_LINKS.map((id) => (
                 <button key={id} onClick={() => go(id)} style={{
                   background: active === id ? t.activeBadgeBg : "transparent",
                   color: active === id ? t.activeBadgeText : t.textSub,
@@ -266,7 +266,7 @@ function Navbar({ theme, t, toggleTheme }) {
           background: t.bg, borderBottom: `1px solid ${t.border}`,
           padding: "16px 24px 24px",
         }}>
-          {links.map((id) => (
+          {NAV_LINKS.map((id) => (
             <button key={id} onClick={() => go(id)} style={{
               display: "block", width: "100%", textAlign: "left",
               background: active === id ? t.bgAlt : "none",
