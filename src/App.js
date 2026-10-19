@@ -175,12 +175,21 @@ function InnerPill({ t, children, small }) {
 }
 
 // ── NAVBAR ─────────────────────────────────────────────────────────────────
+// ─── NAVBAR ───
 function Navbar({ theme, t, toggleTheme }) {
   const [active, setActive] = useState("home");
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const isMobile = useIsMobile();
-  const links = ["home", "about", "skills", "projects", "qualifications", "contact"];
+
+  const links = [
+    "home",
+    "about",
+    "skills",
+    "projects",
+    "qualifications",
+    "contact",
+  ];
 
   useEffect(() => {
     const onScroll = () => {
